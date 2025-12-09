@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contatti | SmartDoctor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1><a href="main.html">SmartDoctor</a></h1>
+    <nav>
+      <a href="main.html">Home</a>
+      <a href="chi-siamo.html">Chi Siamo</a>
+      <a href="contatti.html">Contatti</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="contact-section" class="content" style="margin-top: 4rem;">
+      <h3>Mettiamoci in Contatto</h3>
+      <p style="text-align: center; max-width: 700px; margin: 0 auto 2.5rem auto;">
+        Siamo sempre disponibili per discutere di nuove idee e progetti. Puoi scriverci un'email, chiamarci, oppure compilare il modulo qui sotto.
+      </p>
+
+      <!-- Sezione Info Contatto -->
+      <div class="contact-info-container">
+        <div class="contact-info-box">
+          <h4>Email</h4>
+          <p>Per richieste generali:</p>
+          <a href="mailto:projectwork12111@gmail.com">info.smartdoctor@email.com</a>
+        </div>
+        <div class="contact-info-box">
+          <h4>Telefono</h4>
+          <p>Per parlare direttamente con noi:</p>
+          <p>+39 075 456 7890</p>
+        </div>
+      </div>
+
+      <!-- Contenitore che gestisce form e messaggio di ringraziamento -->
+      <div id="form-wrapper">
+        <!-- Modulo di Contatto -->
+        <!-- IMPORTANTE: action punta all'endpoint Flask sulla VM -->
+        <form id="contact-form" action="http://10.10.14.238:5001/send" method="POST">
+            <h4>Inviaci un Messaggio</h4>
+            <input type="text" id="form-name" name="name" placeholder="Il tuo nome" required>
+            <input type="email" id="form-email" name="email" placeholder="La tua email" required>
+            <textarea id="form-message" name="message" placeholder="Il tuo messaggio..." rows="6" required></textarea>
+            <button type="submit" class="btn">Prepara e Invia Messaggio</button>
+        </form>
+
+        <!-- Messaggio di Ringraziamento (Nascosto) -->
+        <div id="thank-you-message" style="display:none; text-align:center; padding: 2rem;">
+            <h3 style="font-size: 2rem;">Grazie!</h3>
+            <p style="font-size: 1.1rem; margin-top: 1rem;">
+              Il tuo messaggio è stato inviato correttamente.
+            </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 SmartDoctor. Tutti i diritti riservati.
+  </footer>
+
+  <script>
+    // intercetta il submit solo per mostrare il messaggio di "Grazie"
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+      // NON facciamo preventDefault: lasciamo che il form venga inviato al backend
+      // ma dopo un attimo nascondiamo il form e mostriamo il messaggio
+
+      setTimeout(() => {
+        document.getElementById('contact-form').style.display = 'none';
+        document.getElementById('thank-you-message').style.display = 'block';
+      }, 500);
+    });
+  </script>
+
+</body>
+</html>
