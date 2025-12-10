@@ -1,0 +1,9 @@
+*/10 * * * * root python3 /app/monitor.py
+
+*/5 * * * * root python3 /app/alert_check.py
+
+*/5 * * * * root python3 /app/action.py
+
+0 23 * * * root python3 /app/analyzer.py
+
+0 23 * * * root python3 /app/report.py
