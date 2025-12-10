@@ -3,7 +3,7 @@ import subprocess
 
 app = Flask(__name__)
 
-DEST = "projectwork12111@gmail.com"  # metti qui l'email dove vuoi ricevere i messaggi
+DEST = "projectwork12111@gmail.com"  # indirizzo dove vuoi ricevere i messaggi
 
 @app.route("/send", methods=["POST"])
 def send():
@@ -13,7 +13,7 @@ def send():
 
     body = f"Da: {name} <{email}>\n\n{message}\n"
 
-    # usa il comando 'mail' della VM (deve essere configurato e funzionante)
+    # usa il comando 'mail' della VM (che hai già configurato per i report)
     subprocess.run(
         ["mail", "-s", "Messaggio da form SmartDoctor", DEST],
         input=body,

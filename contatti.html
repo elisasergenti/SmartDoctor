@@ -14,6 +14,7 @@
       <a href="main.html">Home</a>
       <a href="chi-siamo.html">Chi Siamo</a>
       <a href="contatti.html">Contatti</a>
+      <a href="monitoraggio.html">Monitoraggio</a>
     </nav>
   </header>
 
@@ -24,7 +25,7 @@
         Siamo sempre disponibili per discutere di nuove idee e progetti. Puoi scriverci un'email, chiamarci, oppure compilare il modulo qui sotto.
       </p>
 
-      <!-- Sezione Info Contatto -->
+      
       <div class="contact-info-container">
         <div class="contact-info-box">
           <h4>Email</h4>
@@ -38,19 +39,18 @@
         </div>
       </div>
 
-      <!-- Contenitore che gestisce form e messaggio di ringraziamento -->
+      
       <div id="form-wrapper">
-        <!-- Modulo di Contatto -->
-        <!-- IMPORTANTE: action punta all'endpoint Flask sulla VM -->
-        <form id="contact-form" action="http://10.10.14.238:5001/send" method="POST">
+        
+        <form id="contact-form" action="http://10.10.55.35:5001/send" method="POST">
             <h4>Inviaci un Messaggio</h4>
             <input type="text" id="form-name" name="name" placeholder="Il tuo nome" required>
             <input type="email" id="form-email" name="email" placeholder="La tua email" required>
             <textarea id="form-message" name="message" placeholder="Il tuo messaggio..." rows="6" required></textarea>
-            <button type="submit" class="btn">Prepara e Invia Messaggio</button>
+            <button type="submit" class="btn">Prepara e invia Messaggio</button>
         </form>
 
-        <!-- Messaggio di Ringraziamento (Nascosto) -->
+        
         <div id="thank-you-message" style="display:none; text-align:center; padding: 2rem;">
             <h3 style="font-size: 2rem;">Grazie!</h3>
             <p style="font-size: 1.1rem; margin-top: 1rem;">
@@ -66,11 +66,9 @@
   </footer>
 
   <script>
-    // intercetta il submit solo per mostrare il messaggio di "Grazie"
-    document.getElementById('contact-form').addEventListener('submit', function(event) {
-      // NON facciamo preventDefault: lasciamo che il form venga inviato al backend
-      // ma dopo un attimo nascondiamo il form e mostriamo il messaggio
 
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+      
       setTimeout(() => {
         document.getElementById('contact-form').style.display = 'none';
         document.getElementById('thank-you-message').style.display = 'block';

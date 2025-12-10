@@ -287,3 +287,33 @@ footer {
     outline: none;
     border-color: var(--accent-color);
 }
+.team-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem; /* Spazio maggiore tra card (orizzontale e verticale) */
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.developer-card {
+  background-color: #2a2a2a;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #333;
+  flex: 1 1 280px;
+  max-width: 320px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.developer-card h4 {
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.developer-card .role {
+  color: var(--muted-color);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Monitoraggio | SmartDoctor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1><a href="main.html" style="text-decoration: none; color: var(--accent-color);">SmartDoctor</a></h1>
+    <nav>
+      <a href="main.html">Home</a>
+      <a href="chi-siamo.html">Chi Siamo</a>
+      <a href="contatti.html">Contatti</a>
+      <a href="monitoraggio.html">Monitoraggio</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="content" style="margin-top: 4rem;">
+      <h3>Dashboard di monitoraggio</h3>
+      <p style="text-align:center; margin-bottom:1.5rem;">
+        Qui mostriamo le metriche della macchina virtuale raccolte con Prometheus e visualizzate in Grafana.
+      </p>
+
+      <iframe
+        src="http://10.10.55.35:3001/d/rYdddlPWk/node-exporter-full?orgId=1&from=now-24h&to=now&timezone=browser&var-ds_prometheus=df66gdnx65kaof&var-job=node&var-nodename=elisa-vm&var-node=localhost:9100&refresh=1m"
+        width="100%"
+        height="600"
+        frameborder="0"
+      ></iframe>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 SmartDoctor. Tutti i diritti riservati.
+  </footer>
+
+</body>
+</html>
